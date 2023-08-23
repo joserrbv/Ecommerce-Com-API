@@ -1,0 +1,117 @@
+.no-scroll {
+    overflow: hidden;
+  }
+
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    nav {
+        background-color:  #2D2D2D;
+        width: 100%;
+
+        img {
+            width: 150px;
+            padding: 20px;
+        }
+    }
+
+    &__form {
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    #titulo_login {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+
+    h2 {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+
+        color: #000000;
+    }
+
+    label {
+        text-align: left;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    &__input-wrapper {
+        width: 524px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-top: 30px;
+    }
+
+    &__input-name {
+        margin-bottom: 15px;
+    }
+
+    input {
+        height: 32px;
+        padding: 18px 13px;
+        border: 2px solid #2D2D2D;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .login__error {
+        color: red;
+        font-size: 12px;
+        margin-top: 3px;
+        text-align: left;
+    }
+
+    #buttonEntrar {
+        width: 524px;
+        margin-right: 10px;
+        border: none;
+        background-color:#0C70F2;
+        border-radius: 6px;
+        padding: 13px;       
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 21px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    #sucess{
+        color:green;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.CreateAcount {
+    display: flex;
+  
+
+    p{
+        color: black;
+    }
+
+    a {
+        color: #0C70F2;
+    }
+
+   
+}
