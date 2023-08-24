@@ -3,7 +3,6 @@ import '../Home/index.scss';
 import Nav from '../../components/Nav/Nav';
 import ProdutoCard from '../../components/ProdutoCard/ProdutoCard';
 import Footer from '../../components/Footer/Footer';
-import propaganda from '/propaganda.svg'
 
 
 //api
@@ -56,7 +55,6 @@ export const Home = () => {
             <button onClick={()=>{ window.location.reload() }}>Tentar novamente!</button>
           </center>
         </>) : (<>
-          <img className='home__propaganda' src={propaganda} alt="" />
           <div className='home__conteiner'>
             {
               produtos.map(produto => (<ProdutoCard key={produto.id} produto={produto} />))

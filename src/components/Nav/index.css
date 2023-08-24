@@ -1,0 +1,51 @@
+.nav {
+  background-color: #0f0f0f;
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.54);
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.54);
+  margin-bottom: 4rem;
+}
+
+.nav-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-top .logo {
+  object-fit: contain;
+  height: 45px;
+}
+
+.nav-top .input-pesquisa {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 35px;
+}
+
+.nav-top .input-pesquisa input {
+  margin-left: 1rem;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.nav-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-bottom li {
+  color: #fff;
+  margin-top: 2%;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  cursor: pointer;
+  list-style-type: none;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.scss';
-import Dnc from '../../assets/Dnc.svg'
+import Dnc from '../../assets/e-commerce-logo.png'
 
 export const Footer = () => {
   return (
