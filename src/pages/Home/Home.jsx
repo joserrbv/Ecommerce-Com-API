@@ -55,7 +55,7 @@ export const Home = () => {
             <button onClick={()=>{ window.location.reload() }}>Tentar novamente!</button>
           </center>
         </>) : (<>
-          <div className='home__conteiner'>
+          <div className='cards'>
             {
               produtos.map(produto => (<ProdutoCard key={produto.id} produto={produto} />))
             }

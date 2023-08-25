@@ -1,11 +1,11 @@
 import React from 'react'
 import './index.scss';
-import Dnc from '../../assets/e-commerce-logo.png'
+import logo from '../../assets/e-commerce-logo.png'
 
 export const Footer = () => {
   return (
     <div className='footer'>
-        <img src={Dnc} alt=""/>
+        <img className="logo" src={logo} alt="Logo da empresa" />
         <p>
         Preços e condições de pagamento exclusivos para compras via internet e podem variar nas lojas físicas. <br />
         <b>Para mais informações</b>, entre em contato: (011) 1111-2222

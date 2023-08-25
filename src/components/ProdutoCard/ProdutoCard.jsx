@@ -5,13 +5,11 @@ import '../ProdutoCard/index.scss';
 export const ProdutoCard = ({produto}) => {
   return (
     <div className='card'>
-      <img src={produto.image} alt="model" className='img-produto'/>
-      <div className='card__produto'>
-        <p>{produto.title}</p>
-        <button id='botaoCard'>
-          <Link to={`/produto/${produto.id}`}>Ver Mais</Link>
-        </button>
-      </div>
+      <img className='img-produto' src={produto.image} alt={`Foto do produto ${produto.title}`} />
+
+      <p>{produto.title}</p>
+
+      <Link className="btn" to={`/produto/${produto.id}`}>Ver Mais</Link>
     </div>
   )
 }
