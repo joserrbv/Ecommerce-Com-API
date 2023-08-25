@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from "../../assets/DncDetalhe.svg";
+import logo from "../../assets/e-commerce-logo.png";
 import { Link } from 'react-router-dom';
 
 import './index.scss';
