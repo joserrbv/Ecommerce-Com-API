@@ -12,10 +12,10 @@ export const Home = () => {
   const [produtos, setProdutos] = useState([]);
   const [error, setError] = useState(null)
 
-  useEffect(()=>{
-  
+  useEffect(() => {
 
-    (async()=>{
+
+    (async () => {
 
       try {
         const resApiProdutos = await fetch('https://fakestoreapi.com/products');
@@ -27,7 +27,7 @@ export const Home = () => {
 
         setProdutos(apiProdutos);
       } catch (error) {
-        
+
         setError({
           titulo: "Erro",
           msg: "Ocorreceu um erro inesperado, tente novamente mais tarde!"
@@ -37,11 +37,11 @@ export const Home = () => {
 
       }
 
-      
-    })()
-    
 
-}, [])
+    })()
+
+
+  }, [])
 
   return (
     <div className='home'>
@@ -51,11 +51,11 @@ export const Home = () => {
           <center class="tela-erro">
             <h1>{error.titulo}</h1>
             <p>{error.msg}</p>
-            
-            <button onClick={()=>{ window.location.reload() }}>Tentar novamente!</button>
+
+            <button onClick={() => { window.location.reload() }}>Tentar novamente!</button>
           </center>
         </>) : (<>
-          <div className='cards'>
+          <div className='container gap-2'>
             {
               produtos.map(produto => (<ProdutoCard key={produto.id} produto={produto} />))
             }
