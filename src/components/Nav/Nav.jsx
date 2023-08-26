@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css';
 import logo from "../../assets/e-commerce-logo.png";
 import lupa from "../../assets/lupa.svg"
+import { Link } from 'react-router-dom';
 
 export const Nav = () => {
 
@@ -21,7 +22,9 @@ export const Nav = () => {
   return (
     <div className='nav'>
         <div className="nav-top">
-          <img src={logo} alt="logo" className="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" className="logo" />
+          </Link>
 
           <form onSubmit={()=>{submitPesquisa}} className='input-pesquisa'>
             <input id='pesquisa' name="pesquisa" type="text" placeholder="O que você está procurando?" />

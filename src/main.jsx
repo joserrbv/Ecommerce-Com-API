@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import  Carrinho  from './pages/Carrinho/Carrinho';
-import  Login  from './pages/Login/Login';
-import  Pay from './pages/Pay/Pay';
-import  Home  from './pages/Home/Home';
-import Produto from './pages/Produto/Produto';
+import Carrinho  from './pages/Carrinho/Carrinho';
+import Login  from './pages/Login/Login';
+import Pay from './pages/Pay/Pay';
+import Home  from './pages/Home/Home';
+import PagesProduto from './pages/Produto/Produto.js';
 import Cadastro from './pages/Cadastro/Cadastro';
 import './index.css';
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
    },
   {
     path: "/produto/:produtoId",
-    element: <Produto />,
+    element: <PagesProduto />,
   },
   {
     path: "/carrinho/:carrinhoId",
