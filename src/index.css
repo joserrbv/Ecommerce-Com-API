@@ -36,6 +36,10 @@ li,
   color: var(--color-text);
 }
 
+.text-center{
+  text-align: center;
+}
+
 img {
   max-width: 100%;
 }
@@ -82,19 +86,19 @@ button {
   color: var(--color-text-card);
 }
 
-.tela-erro {
-  margin-top: 4rem;
-  margin-bottom: 6rem;
-}
-
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.container.column{
+  flex-direction: column;
 }
 
 .gap-2 {
@@ -114,6 +118,10 @@ button {
   object-fit: contain;
   max-width: 90%;
   margin: auto;
+}
+
+.tela-carregando{
+  min-height: 100vh;
 }
 
 
