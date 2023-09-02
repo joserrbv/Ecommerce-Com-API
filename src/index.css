@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Raleway&display=swap");
+
+:root {
+  --color-text: #fff;
+  --color-bg: #555;
+  --color-bg-nav: #0f0f0f;
+  --color-bg-footer: #091227;
+  --color-bg-primary: #0994DC;
+  --color-bg-card: #fff;
+  --color-text-card: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+i,
+ul,
+li,
+.font-white {
+  color: var(--color-text);
+}
+
+.text-center{
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-bg-primary);
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: fit-content;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin: 0.2rem;
+  padding: 1rem;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+}
+
+.btn-medium{
+  font-size: 1.5rem;
+}
+
+.bg-white {
+  background: var(--color-bg-card);
+}
+
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white h5,
+.bg-white h6,
+.bg-white p,
+.bg-white span {
+  color: var(--color-text-card);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.container.column{
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.dual-col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+  width: 50%;
+  gap: 1rem;
+}
+
+.img-produto-detalhe{
+  object-fit: contain;
+  max-width: 90%;
+  margin: auto;
+}
+
+.tela-carregando{
+  min-height: 100vh;
+}
+
+
+/* Tela do celular */
+@media (max-width: 768px) {
+  .dual-col{
+    width: 90%;
+  }
+}

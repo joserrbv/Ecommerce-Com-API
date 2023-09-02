@@ -1,18 +1,11 @@
-
 .footer{
-    background-color: #0C70F2;
-
+    background-color: var(--color-bg-footer);
     display: flex;
     align-items: center;
     padding: 15px 35px;
     gap: 35px;
     justify-content: flex-start;
 
-    p{
-
-        color: #fff;
-
-    }
     img{
         width: 100px;
     }
