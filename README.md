@@ -1,19 +1,19 @@
 # Ecommerce Com API
 
-Projeto de um ECOMMERCE com consumo de API para aprendizado.
+Projeto de um ECOMMERCE com consumo de API para aprendizado. Esse é o site https://ecommerce.zenatechsolucoes.com.br/
 
 Iniciamos o projeto no TRELLO organizando e distribuindo as etapas por membro do grupo, por duplas e por grupo.
 a cada etapa do projeto desenvolvida, eram feitos commit, merge e atualizações no TRELLO. 
 
-Projeto desenvolvido em react
+* Projeto desenvolvido em react
  
-React Router, vite
+* React Router, vite
  
-Nodejs e sass. 
+* Node.js e sass. 
   
-O @Rodrigo criou o projeto na branch master, fez a primeira estruturação com os componentes, mock, pages e rotas.
+O @Rodrigo criou o projeto na branch **master**, fez a primeira estruturação com os componentes, **mock**, **pages** e **rotas**.
   
-Em seguida criou a branch desenvolvimento e passou o link do projeto para os demais fazerem o Clone através do github.
+Em seguida criou a branch **desenvolvimento** e passou o link do projeto para os demais fazerem o Clone através do github.
 
 O @Joserrbv adicionou a proteção de branch chamada "etapa". 
 
@@ -28,12 +28,21 @@ utilizando o projects do GitHub com a metologia de Kanban para organizar as tare
 
 
 ## Dependência
+
 - NodeJS
 - NPM
-- E necessário digitar na primeira vez o seguinte comando para instalar as demais dependências ```npm install```
+ 
+E necessário digitar na primeira vez o seguinte comando para instalar as demais dependências ```npm install```
 
 ## Como iniciar projeto:
+
 - Digite o comando ```npm run dev``` para inciar no ambiente http://localhost:5173
 
 ### Colabroadores
-- @joserrbv ( Jose Queiroz)     
+
+- @joserrbv ( Jose Queiroz)
+
+### Imagens
+
+![produto](https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg)
+- "Essa imagem representa que api ainda está ativa"
