@@ -9,6 +9,7 @@ import PagesProduto from './pages/Produto/Produto.js';
 import Cadastro from './pages/Cadastro/Cadastro';
 import './index.css';
 import PagesCategoria from './pages/Categoria/Categoria';
+import Pesquisa from './pages/Pesquisa/Pesquisa';
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/loja",
     element: <Home />,
+  },
+  {
+    path: "/pesquisa",
+    element: <Pesquisa />,
   },
   {
     path: "/categoria/:nome",
