@@ -7,6 +7,7 @@ export const Nav = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const [categorias, setCategorias] = useState([]);
   const [error, setError] = useState(null)
+  const [carrinho, setCarrinho] = useState(null)
 
   useEffect(() => {
 
@@ -14,6 +15,14 @@ export const Nav = () => {
     (async () => {
 
       try {
+        let carrinho = {itens: [], valorTotal: 0};
+        try {
+          carrinho = JSON?.parse(localStorage.getItem("carrinho") || "{ itens: [], valorTotal: 0 }");
+        } catch (error) {}
+
+        setCarrinho(carrinho);
+
+
         const resApi = await fetch('https://fakestoreapi.com/products/categories')
         const resApiJson = await resApi.json()
 
@@ -56,7 +65,7 @@ export const Nav = () => {
           <button type="submit"><i className="font-white fa-solid fa-magnifying-glass fa-2x"></i></button>
         </form>
 
-        <i className="font-white fa-solid fa-cart-shopping fa-2x"></i>
+        <Link to={`/carrinho`}><i className="font-white fa-solid fa-cart-shopping fa-2x"></i> <span className='text-white'>{carrinho?.itens?.length}</span></Link>
       </div>
 
 
@@ -75,11 +84,11 @@ export const Nav = () => {
 
 
             {
-              categorias.map((categoria) => (<>
+              categorias.map((categoria) => (<div key={categoria}>
                 <Link to={`/categoria/${categoria}`}>
                   <li>{categoria}</li>
                 </Link>
-              </>))
+              </div>))
             }
 
           </>)

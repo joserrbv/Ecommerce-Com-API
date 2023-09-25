@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-import Carrinho from './pages/Carrinho/Carrinho';
+import PagesCarrinho from './pages/Carrinho/Carrinho';
 import Login from './pages/Login/Login';
-import Pay from './pages/Pay/Pay';
 import Home from './pages/Home/Home';
 import PagesProduto from './pages/Produto/Produto.js';
 import Cadastro from './pages/Cadastro/Cadastro';
-import './index.css';
 import PagesCategoria from './pages/Categoria/Categoria';
 import Pesquisa from './pages/Pesquisa/Pesquisa';
+import './index.css';
+import PagesCheckout from './pages/Checkout/Checkout';
 
 
 const router = createBrowserRouter([
@@ -42,12 +42,12 @@ const router = createBrowserRouter([
     element: <PagesProduto />,
   },
   {
-    path: "/carrinho/:carrinhoId",
-    element: <Carrinho />,
+    path: "/carrinho",
+    element: <PagesCarrinho />,
   },
   {
-    path: "/pay/:payId",
-    element: <Pay />,
+    path: "/checkout",
+    element: <PagesCheckout />,
   },
 ]);
 
