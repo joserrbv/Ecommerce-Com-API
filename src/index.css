@@ -162,6 +162,17 @@ button {
   margin-top: 1rem;
 }
 
+.btn-login-google span{
+  color: var(--color-text-card)!important;
+}
+
+.tela-login{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Tela do celular */
 @media (max-width: 768px) {
   .dual-col{
