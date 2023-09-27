@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import PagesCarrinho from './pages/Carrinho/Carrinho';
-import Login from './pages/Login/Login';
+import PagesLogin from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import PagesProduto from './pages/Produto/Produto.js';
 import Cadastro from './pages/Cadastro/Cadastro';
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <PagesLogin />,
   },
   {
     path: "/cadastro",
