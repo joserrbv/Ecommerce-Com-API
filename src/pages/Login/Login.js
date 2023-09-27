@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import HtmlPageLogin from './Login.jsx';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +7,7 @@ export default function PagesLogin() {
   const [error, setError] = useState(null)
   const [carregando, setCarregando] = useState(true);
   const navigate = useNavigate();
+  const queryParams = new URLSearchParams(window.location.search);
 
   useEffect(() => {
 
@@ -33,9 +33,20 @@ export default function PagesLogin() {
 
   }, [])
 
+
+
+  function loginSucesso(credentialResponse){
+    localStorage.setItem("credencialUsuario", JSON.stringify(credentialResponse));
+    if(queryParams.get('redirect')){
+      navigate(queryParams.get('redirect'));
+    } else { 
+      navigate("/");
+    }
+  }
+
   
   
 
 
-return HtmlPageLogin({ carregando, error })
+return HtmlPageLogin({ carregando, error, loginSucesso })
 }

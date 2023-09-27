@@ -4,7 +4,7 @@ import ComponentsCarregando from '../../components/Carregando/Carregando'
 import ComponentsError from '../../components/Error/Error'
 import { Link } from 'react-router-dom'
 
-export default function HtmlPageCheckout({ carrinho, carregando, error}) {
+export default function HtmlPageCheckout({ carregando, error, carrinho, usuario }) {
   return (
     <div>
       <Nav />
@@ -19,31 +19,33 @@ export default function HtmlPageCheckout({ carrinho, carregando, error}) {
 
                 <div className='dual-col'>
 
-                  <div>
-                    <h2>Você já tem conta?</h2>
-                    <p>Se você já tem cadastro em nosso site faça o login antes de fechar a compra para ter suas informações pre-prenchidas!</p>
-                    <Link to="/login">
-                      <a className='btn'> Efetuar login </a>
-                    </Link>
-                  </div>
+                  {
+                    (usuario.id) ? (<></>) : (<>
+                      <div>
+                        <h2>Você já tem conta?</h2>
+                        <p>Se você já tem cadastro em nosso site faça o login antes de fechar a compra para ter suas informações pre-prenchidas!</p>
+                        <Link to="/login?redirect=/checkout">
+                          <a className='btn'> Efetuar login </a>
+                        </Link>
+                      </div>
 
-                  <div>
-                    <br/>
-                    <p><b>OU</b></p>
-                    <p>Prencha o formulário para cadastrar-se e finalizar sua compra!</p>
-                    <br/>
-                  </div>
-
-
+                      <div>
+                        <br />
+                        <p><b>OU</b></p>
+                        <p>Prencha o formulário para cadastrar-se e finalizar sua compra!</p>
+                        <br />
+                      </div>
+                    </>)
+                  }
                   <form action="" className="form">
 
                     <div>
-                      <br/>
+                      <br />
                       <h3>Dados Pessoais</h3>
-                      <hr/>
+                      <hr />
 
                       <label htmlFor="nomeCompleto">Nome completo</label>
-                      <input type="text" id="nomeCompleto" name="nomeCompleto" className="input" required />
+                      <input defaultValue={usuario?.nomeCompleto} type="text" id="nomeCompleto" name="nomeCompleto" className="input" required />
 
 
                       <label htmlFor="cpf">CPF</label>
@@ -55,13 +57,13 @@ export default function HtmlPageCheckout({ carrinho, carregando, error}) {
 
 
                       <label htmlFor="email">E-mail</label>
-                      <input type="text" id="email" name="email" className="input" required />
+                      <input defaultValue={usuario?.email} type="text" id="email" name="email" className="input" required />
                     </div>
 
                     <div>
-                      <br/>
+                      <br />
                       <h3>Pagamento</h3>
-                      <hr/>
+                      <hr />
 
                       <label htmlFor="numeroCartao">Número do cartão de cŕedito</label>
                       <input type="text" id="numeroCartao" name="numeroCartao" className="input" required />
@@ -84,17 +86,17 @@ export default function HtmlPageCheckout({ carrinho, carregando, error}) {
                     </Link>
 
                   </form>
-                  
+
                 </div>
 
                 <div className='dual-col col-align-right'>
                   {
-                      carrinho?.itens?.map((produto, indexProduto) => (<>
-                          <h4>{produto?.title}</h4>
-                          <h6>R$ {produto?.price}</h6>
-                          <br />
-                      </>))
-                    }
+                    carrinho?.itens?.map((produto, indexProduto) => (<>
+                      <h4>{produto?.title}</h4>
+                      <h6>R$ {produto?.price}</h6>
+                      <br />
+                    </>))
+                  }
 
                   <h1><b>Valor Total:</b> {Number(carrinho?.valorTotal).toLocaleString('pt-br', { style: "currency", currency: "BRL" })}</h1>
                 </div>
