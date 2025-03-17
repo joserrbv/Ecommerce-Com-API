@@ -50,8 +50,7 @@ export const Nav = () => {
 
   }, [])
 
-
-
+ 
   return (
     <div className='nav'>
       <div className="nav-top">
@@ -60,14 +59,19 @@ export const Nav = () => {
           <img src={logo} alt="logo" className="logo" />
         </Link>
 
+        
+
         <form action="/pesquisa" className='input-pesquisa'>
           <input id='busca' name="busca" type="text" placeholder="O que você está procurando?" minLength="2" defaultValue={queryParams.get('busca')} required />
           <button type="submit"><i className="font-white fa-solid fa-magnifying-glass fa-2x"></i></button>
         </form>
 
-        <Link to={`/carrinho`}><i className="font-white fa-solid fa-cart-shopping fa-2x"></i> <span className='text-white'>{carrinho?.itens?.length}</span></Link>
+        <Link to={`/carrinho`}><i className="font-white fa-solid fa-cart-shopping fa-2x"></i> <span className='text-white'>{carrinho?.itens?.length}</span>
+        
+        </Link>
       </div>
 
+      
 
       <ul className='nav-bottom'>
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import HtmlPageCarrinho from './Carrinho.jsx';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +7,7 @@ export default function PagesCarrinho() {
   const [carrinho, setCarrinho] = useState(null)
   const [error, setError] = useState(null)
   const [carregando, setCarregando] = useState(true);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
 
@@ -50,6 +49,8 @@ export default function PagesCarrinho() {
   
       carrinho.valorTotal -= produto.price;
       carrinho?.itens?.splice(indexProduto, 1);
+
+    
   
       localStorage.setItem("carrinho", JSON?.stringify(carrinho));
       setCarrinho(carrinho);
@@ -57,6 +58,7 @@ export default function PagesCarrinho() {
     }
   }
 
+  
   
 
 return HtmlPageCarrinho({ carrinho, carregando, error, onClickRemoverProduto })

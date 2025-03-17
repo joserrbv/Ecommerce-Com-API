@@ -40,7 +40,7 @@ export default function HtmlPageCarrinho({ carrinho, carregando, error, onClickR
                 </div>
 
                 <div className='dual-col col-align-right'>
-                  <h2><b>Valor Total:</b> {Number(carrinho?.valorTotal).toLocaleString('pt-br', { style: "currency", currency: "BRL" })}</h2>
+                  <h2><b>Valor Total:</b> {Number(carrinho?.valorTotal).toLocaleString('pt-br', { style: "currency", currency: "BRL" } )} </h2>
 
                   <Link to="/checkout">
                     <a className='btn btn-medium'>
