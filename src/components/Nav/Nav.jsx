@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import './index.css';
 import logo from "../../assets/e-commerce-logo.png";
-import lupa from "../../assets/lupa.svg"
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
+  const queryParams = new URLSearchParams(window.location.search);
   const [categorias, setCategorias] = useState([]);
   const [error, setError] = useState(null)
+  const [carrinho, setCarrinho] = useState(null)
 
   useEffect(() => {
+
 
     (async () => {
 
       try {
+        let carrinho = {itens: [], valorTotal: 0};
+        try {
+          carrinho = JSON?.parse(localStorage.getItem("carrinho") || "{ itens: [], valorTotal: 0 }");
+        } catch (error) {}
+
+        setCarrinho(carrinho);
+
+
         const resApi = await fetch('https://fakestoreapi.com/products/categories')
         const resApiJson = await resApi.json()
 
@@ -40,23 +50,7 @@ export const Nav = () => {
 
   }, [])
 
-
-
-  function submitPesquisa(event) {
-    event.preventDefault();
-    // INICIO - obter valores do formulario
-    let dadosFormJson = {};
-    let dadosForm = new FormData(event.target);
-    dadosForm.forEach((valor, chave) => {
-      dadosFormJson[chave] = valor;
-    });
-    // FIM - obter valores do formulario
-
-    console.log(dadosFormJson);
-  }
-
-
-
+ 
   return (
     <div className='nav'>
       <div className="nav-top">
@@ -65,14 +59,19 @@ export const Nav = () => {
           <img src={logo} alt="logo" className="logo" />
         </Link>
 
-        <form onSubmit={() => { submitPesquisa }} className='input-pesquisa'>
-          <input id='pesquisa' name="pesquisa" type="text" placeholder="O que você está procurando?" />
+        
+
+        <form action="/pesquisa" className='input-pesquisa'>
+          <input id='busca' name="busca" type="text" placeholder="O que você está procurando?" minLength="2" defaultValue={queryParams.get('busca')} required />
           <button type="submit"><i className="font-white fa-solid fa-magnifying-glass fa-2x"></i></button>
         </form>
 
-        <i className="font-white fa-solid fa-cart-shopping fa-2x"></i>
+        <Link to={`/carrinho`}><i className="font-white fa-solid fa-cart-shopping fa-2x"></i> <span className='text-white'>{carrinho?.itens?.length}</span>
+        
+        </Link>
       </div>
 
+      
 
       <ul className='nav-bottom'>
 
@@ -89,11 +88,11 @@ export const Nav = () => {
 
 
             {
-              categorias.map((categoria) => (<>
+              categorias.map((categoria) => (<div key={categoria}>
                 <Link to={`/categoria/${categoria}`}>
                   <li>{categoria}</li>
                 </Link>
-              </>))
+              </div>))
             }
 
           </>)
