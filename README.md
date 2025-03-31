@@ -47,7 +47,7 @@ E necessário digitar na primeira vez o seguinte comando para instalar as demais
 ![produto](https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg)
 - "Essa imagem representa que api ainda está ativa"
 
-## Acesso a demontração
+## Acesso a demonstração
 
 https://ecommerce.zenatechsolucoes.com.br/
 
